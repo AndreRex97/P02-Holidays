@@ -60,6 +60,12 @@ public class HolidayAdapter extends ArrayAdapter<Holiday>{
         if(currentHoliday.getImage() == "labourday"){
             ivEvent.setImageResource(R.drawable.labourday);
         }
+        else if (currentHoliday.getImage() == "chinesenewyear"){
+            ivEvent.setImageResource(R.drawable.cny);
+        }
+        else if(currentHoliday.getImage() == "goodfriday"){
+            ivEvent.setImageResource(R.drawable.goodfriday);
+        }
         else {
             ivEvent.setImageResource(R.drawable.newyear);
         }

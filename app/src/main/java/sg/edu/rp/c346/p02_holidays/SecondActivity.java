@@ -33,11 +33,17 @@ public class SecondActivity extends AppCompatActivity {
         lvEvent = (ListView)findViewById(R.id.ListViewEvent);
 
         alHoliday = new ArrayList<Holiday>();
-        alHoliday.add(new Holiday("Secular", "newyear", "New Year's Day", "01-01-2017"));
-        alHoliday.add(new Holiday("Secular", "labourday", "Labour Day", "01-05-2017"));
 
         aaHoliday = new HolidayAdapter(this, R.layout.row, alHoliday);
         lvEvent.setAdapter(aaHoliday);
+
+        if(strTitle.equals("Secular")){
+            alHoliday.add(new Holiday("Secular", "newyear", "New Year's Day", "01 Jan 2017"));
+            alHoliday.add(new Holiday("Secular", "labourday", "Labour Day", "01 May 2017"));
+        } else {
+            alHoliday.add(new Holiday("Ethnic & Religion", "chinesenewyear", "Chinese New Year", "28-29 Jan 2019"));
+            alHoliday.add(new Holiday("Ethnic & Religion", "goodfriday", "Good Friday", "14 April 2017"));
+        }
 
         lvEvent.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -46,7 +52,7 @@ public class SecondActivity extends AppCompatActivity {
                 Holiday selectedEvent = alHoliday.get(position);
 
                 Toast.makeText(SecondActivity.this, selectedEvent.getEvent()
-                                + " " + selectedEvent.getDate(),
+                                + " Date:" + selectedEvent.getDate(),
                         Toast.LENGTH_LONG).show();
             }
         });

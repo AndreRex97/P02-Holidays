@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         alCategory = new ArrayList<String>();
         alCategory.add("Secular");
+        alCategory.add("Ethnic & Religion");
 
         aaCategory = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, alCategory);
         lvCategory.setAdapter(aaCategory);
